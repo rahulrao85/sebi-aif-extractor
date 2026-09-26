@@ -1,0 +1,20 @@
+{
+  "name": "sebi-aif-extractor",
+  "version": "1.0.0",
+  "description": "Extracts the SEBI registry of Alternative Investment Funds and exports formatted Excel and CSV reports.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "scrape": "node scripts/scrape-once.js",
+    "test": "node --check server.js && node --check src/sebiScraper.js && node --check src/reportBuilder.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "playwright": "^1.59.1"
+  }
+}

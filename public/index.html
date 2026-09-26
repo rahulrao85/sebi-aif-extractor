@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEBI AIF Report Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Local report tool</p>
+          <h1>SEBI AIF Registry</h1>
+        </div>
+        <button id="fetchButton" type="button">Fetch Latest</button>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <div>
+          <p id="statusLabel">Ready</p>
+          <strong id="statusDetail">Fetch the latest registry from SEBI.</strong>
+        </div>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </section>
+
+      <section class="metrics" id="metrics" hidden>
+        <div><span>Total</span><strong id="metricTotal">0</strong></div>
+        <div><span>Category I</span><strong id="metricCat1">0</strong></div>
+        <div><span>Category II</span><strong id="metricCat2">0</strong></div>
+        <div><span>Category III</span><strong id="metricCat3">0</strong></div>
+      </section>
+
+      <section class="actions" id="downloadPanel" hidden>
+        <a class="download" href="/api/download/xlsx">Download Excel</a>
+        <a class="download secondary" href="/api/download/csv">Download CSV</a>
+        <input id="filterInput" type="search" placeholder="Filter preview">
+      </section>
+
+      <section class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Fund Name</th>
+              <th>Registration Number</th>
+              <th>Category</th>
+              <th>Contact Person</th>
+              <th>Email Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Registration Validity</th>
+            </tr>
+          </thead>
+          <tbody id="previewBody">
+            <tr><td colspan="9" class="empty">No data fetched yet.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
