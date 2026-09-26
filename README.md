@@ -5,8 +5,6 @@ and III) as a paginated web page with anti-bot protection. There's no official d
 drives a real headless browser through every page, cleans the records, and exports an
 analysis-ready Excel report and CSV.
 
-**Live demo:** https://sebi-aif.rahulrao.in
-
 Built for a friend in fund research who was otherwise copying the registry by hand.
 
 ## What it does
